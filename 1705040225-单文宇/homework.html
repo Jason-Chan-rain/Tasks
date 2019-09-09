@@ -1,0 +1,216 @@
+<html>
+
+<head>
+    <title>管理主页</title>
+    <meta charset="UTF-8">
+    </meta>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    </meta>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+</head>
+
+<body style="margin-left: 30%">
+    <div id="test1">
+        <h2>test1</h2>
+        年份:
+        <input type="text" v-model:value="year" ref="yearcnt">
+        <br>
+        字长:
+        <input type="text" v-model:value="long" ref="longcnt">
+        <br>
+        <br>
+        年份：{{year}}
+        <br>
+        字长：{{long}}
+        <br>
+        计算机存储容量的需求(字)：{{request}}
+        <br>
+        存储器的价格(美元)：{{price}}
+    </div>
+    <div id="test2">
+        <h2>test2</h2>
+        年份:
+        <input type="text" v-model:value="year">
+        <br>
+        指令:
+        <input type="text" v-model:value="pc">
+        <br>
+        工资：
+        <input type="text" v-model:value="salary">
+        <br>
+        <br>
+        年份：{{year}}
+        <br>
+        指令：{{pc}}
+        <br>
+        工资：{{salary}}
+        <br>
+        计算机存储容量的需求：{{request}}
+        <br>
+        计算机程序装满所需成本：{{sum}}
+    </div>
+    <div id="test3">
+            <h2>test3</h2>
+            年份:
+            <input type="text" v-model:value="year">
+            <br>
+            字长:
+           <input type="text" v-model:value="long">
+           <br>
+            指令:
+            <input type="text" v-model:value="pc">
+            <br>
+            工资:
+            <input type="text" v-model:value="salary">
+            <br>
+            <br>
+            年份：{{year}}
+            <br>
+            字长：{{long}}
+            <br>
+            指令：{{pc}}
+            <br>
+            工资：{{salary}}
+            <br>
+            计算机存储容量的需求：{{request}}
+            <br>
+            存储的价格：{{price}}
+            <br>
+            计算机程序装满所需成本：{{sum}}
+        </div>
+        
+        <script>
+        // 实例化vue对象
+new Vue({
+    el: "#test1",
+    data: {
+        year: "",
+        long: "",
+    },
+    computed:{
+        year:function(){
+            return this.year;
+        },
+        long:function(){
+            return this.long;
+        },
+        request:function(){
+            if(this.year!=""){
+            var zs=0.28*(this.year-1960);
+            request=4080*Math.exp(zs);
+            return request;
+            }else{
+                return "";
+            }
+           
+        },
+        price:function(){
+            if(this.long!=""){
+            var z=this.year-1974;
+            price=0.3*Math.pow(0.72,z)/16*this.request;
+            return price;
+            }else{
+                return "";
+            }
+        }
+    }
+});
+
+new Vue({
+    el: "#test2",
+    data: {
+        year: "",
+        pc: "",
+        salary:"",
+    },
+    computed:{
+        year:function(){
+            return this.year;
+        },
+        pc:function(){
+            return this.pc;
+        },
+        salary:function(){
+            return this.salary;
+        },
+        request:function(){
+            if(this.year!=""){
+                var zs=0.38*(this.year-1960);
+                request=4080*Math.exp(zs);
+                return request;
+            }else{
+                return "";
+            }
+        },
+       sum:function(){
+           if(this.year!=""&&this.request!=""&&this.salary!=""){
+           var z=this.year-1974;
+           var p=0.048*Math.pow(0.72,z)*this.request;
+           var count=this.request/this.pc;
+           var daymoney=this.salary/30;
+           return this.pc*p+count*daymoney;
+           }else{
+               return "";
+           }
+       }
+    }
+});
+new Vue({
+    el: "#test3",
+    data: {
+        year: "",
+        long:"",
+        pc: "",
+        salary:"",
+    },
+    computed:{
+        year:function(){
+            return this.year;
+        },
+        pc:function(){
+            return this.pc;
+        },
+        long:function(){
+            return this.long;
+        },
+        salary:function(){
+            return this.salary;
+        },
+        price:function(){
+            if(this.year!=""&&this.request!=""){
+            var z=this.year-1974;
+            price=0.3*Math.pow(0.72,z)/16*this.request;
+            return price;
+            }else{
+                return "";
+            }
+        },
+        request:function(){
+            if(this.year!=""){
+            var zs=0.38*(this.year-1960);
+            request=4080*Math.exp(zs);
+            return request;
+            }else{
+                return "";
+            }
+        },
+       sum:function(){
+           if(this.year!=""&&this.request!=""&&this.salary!=""){
+           var z=this.year-1974;
+           var p=0.048*Math.pow(0.72,z)*this.request;
+           var count=this.request/this.pc;
+           var daymoney=this.salary/30;
+           return this.pc*p+count*daymoney;
+           }else{
+               return "";
+           }
+       }
+    }
+});
+
+
+    </script>
+</body>
+
+</html>
