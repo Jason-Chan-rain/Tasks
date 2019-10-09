@@ -1,0 +1,24 @@
+.container{
+    margin-top: 50px;
+    height: 600px;
+    background-color: #c92525;
+}
+.top{
+    height: 200px;
+}
+.foot{
+    height: 200px;
+}
+.card {
+    width: 30px;
+    height: 60px;
+    border: solid 0.5px black;
+    margin-left: 3px;
+    float: left;
+    -webkit-user-select: none;
+  }
+  .number {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 3px;
+  }

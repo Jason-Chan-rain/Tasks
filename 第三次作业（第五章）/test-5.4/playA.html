@@ -1,0 +1,81 @@
+<!-- 搜索工资档案数据，找出年工资少于$26000的人，计算新工资，校核是否超过$26000，存储新工资，印出新旧工资对照表 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+        <h1 style="text-align: center">某教师工资系统</h1>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <table class="table table-bordered table-hover" id="playA">
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                原有工资
+                            </th>
+                            <th>
+                                新工资
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr name="tr1">
+                                    <td name="td1">1</td>
+                                    <td name="td1"> 张三</td>
+                                    <td name="td1">10000</td>
+                                    <td>10450</td>
+                                </tr>
+                                <tr class="error" name="tr1">
+                                        <td>3</td>
+                                        <td>王五</td>
+                                        <td>11000</td>
+                                        <td>11400</td>
+                                    </tr>
+                                    <tr class="warning" name="tr1">
+                                        <td>4</td>
+                                        <td> 李六</td>
+                                        <td>25000</td>
+                                        <td>25550</td>
+                                    </tr>
+                                    <tr class="info" name="tr1">
+                                        <td>5</td>
+                                        <td>九九</td>
+                                        <td>10000</td>
+                                        <td>10350</td>
+                                    </tr>
+                            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-5 column">
+            </div>
+            <div class="col-md-2 column">
+                <a href="index.html"><button class="btn btn-default">返回</button></a>
+
+            </div>
+            <div class="col-md-5 column">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./js/playA.js"></script>
+
+</html>
