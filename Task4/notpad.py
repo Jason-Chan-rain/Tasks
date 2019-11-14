@@ -441,7 +441,9 @@ class MainWindow(QMainWindow):
     def cursorPosition(self):
         row = self.plainTextEdit.textCursor().blockNumber()
         col = self.plainTextEdit.textCursor().columnNumber()
-        self.statusBar.showMessage("行 %d , 列 %d" % (row + 1, col + 1))
+        comp= self.plainTextEdit.toPlainText().replace("\n","").replace(" ","").strip()
+        length = len(comp)
+        self.statusBar.showMessage("行 %d , 列 %d，字数 %d" % (row + 1, col + 1, length ))
 
     def closeEvent(self, QcloseEvent):
         result = self.exit()
