@@ -1,0 +1,6 @@
+background: '#dddddd'
+foreground: '#000000'
+text_background: '#ffffff'
+text_foreground: '#000000'
+terminal_background: '#313131'
+terminal_foreground: '#f0f0f0'
